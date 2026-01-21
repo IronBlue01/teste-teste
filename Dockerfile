@@ -27,7 +27,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install intl
 
 # Instalar Composer
-COPY --from=composer:2.6 /usr/bin/composer /usr/bin/composer
+# COPY --from=composer:2.6 /usr/bin/composer /usr/bin/composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Criar diretório
 WORKDIR /var/www
@@ -52,3 +53,6 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 EXPOSE 9000
 
 CMD ["/usr/bin/supervisord"]
+ 
+
+
