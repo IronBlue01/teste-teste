@@ -59,7 +59,14 @@ return [
             'throw' => false,
             'report' => false,
         ],
-
+        'repositories' => [
+            'driver' => 'local',
+            'root' => base_path('Repositories'),
+        ],
+        'products' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/products'),
+        ]
     ],
 
     /*
